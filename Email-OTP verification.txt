@@ -1,0 +1,9 @@
+import random
+import smtplib
+server= smtplib.SMTP('smtp.gmail.com',587)
+server.starttls()
+server.login('mranandmadhav1234@gmail.com','dqnoppxaohjkzufd')
+otp=''.join([str(random.randint(0,9)) for i in range(4)])
+MSG='HELLO, Your OTP is- '+str(otp)
+server.sendmail('mranandmadhav1234@gmail.com','renukarana1497@gmail.com',MSG)
+server.quit()
